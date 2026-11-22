@@ -69,6 +69,7 @@ footer a { color: #5b6cf9; text-decoration: none; }
 .row-main { min-width: 0; }
 .row-title { font-size: 17px; font-weight: 600; }
 .row-sub { margin-top: 4px; font-size: 13px; color: var(--muted); }
+.row-url { margin-top: 3px; font-size: 12px; color: #5b6cf9; word-break: break-all; }
 .row-go {
     flex: 0 0 auto; padding: 9px 18px; border-radius: 9px;
     background: linear-gradient(135deg, #6b7bff, #5b6cf9); color: #fff;
