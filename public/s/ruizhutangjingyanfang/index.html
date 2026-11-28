@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑞竹堂经验方 · 这一版</title>
+<meta property="og:title" content="《瑞竹堂经验方》公版影印本">
+<meta property="og:description" content="原文一字未删，手机和打印都清楚">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="一書一頁">
+<style>
+:root {
+    --baidu: #2932e1;
+    --quark: #5b6cf9;
+    --xunlei: #12a0ff;
+    --text: #1f2329;
+    --muted: #8a9099;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    min-height: 100vh;
+    padding: 48px 20px 64px;
+    font-family: "微软雅黑", "PingFang SC", system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, #eef2ff 0%, #f7f9fc 45%, #eaf6ff 100%);
+    -webkit-font-smoothing: antialiased;
+}
+.wrap { width: 100%; max-width: 760px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 40px; }
+header h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; }
+header .sub { margin-top: 10px; font-size: 15px; color: var(--muted); }
+.cards { display: grid; gap: 18px; }
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 0 6px 20px rgba(31, 35, 41, .07);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(31, 35, 41, .12); }
+.head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.logo {
+    flex: 0 0 44px; width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 1px;
+}
+.card.baidu .logo  { background: linear-gradient(135deg, #2b5cff, var(--baidu)); }
+.card.quark .logo  { background: linear-gradient(135deg, #7a86ff, var(--quark)); }
+.card.xunlei .logo { background: linear-gradient(135deg, #45b8ff, var(--xunlei)); }
+.title { font-size: 18px; font-weight: 600; }
+.pw { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.pw b { color: var(--text); font-weight: 600; letter-spacing: 1px; }
+.btn {
+    display: block; padding: 13px 20px; border-radius: 10px;
+    text-align: center; font-size: 16px; font-weight: 600;
+    color: #fff; text-decoration: none;
+    transition: filter .18s ease, transform .18s ease;
+}
+.btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.card.baidu .btn  { background: var(--baidu); }
+.card.quark .btn  { background: var(--quark); }
+.card.xunlei .btn { background: var(--xunlei); }
+.tip { margin-top: 10px; font-size: 12.5px; line-height: 1.6; color: var(--muted); }
+footer { margin-top: 36px; text-align: center; font-size: 12.5px; color: var(--muted); line-height: 1.9; }
+footer a { color: #5b6cf9; text-decoration: none; }
+
+/* 目录页 */
+.rows { display: grid; gap: 14px; }
+.row {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: #fff; border-radius: 14px; padding: 18px 22px;
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 0 6px 20px rgba(31, 35, 41, .07);
+    text-decoration: none; color: var(--text);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.row:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(31, 35, 41, .12); }
+.row-main { min-width: 0; }
+.row-title { font-size: 17px; font-weight: 600; }
+.row-sub { margin-top: 4px; font-size: 13px; color: var(--muted); }
+.row-url { margin-top: 3px; font-size: 12px; color: #5b6cf9; word-break: break-all; }
+.pw-code { color: #5b6cf9; cursor: pointer; text-decoration: underline dotted; }
+.row-go {
+    flex: 0 0 auto; padding: 9px 18px; border-radius: 9px;
+    background: linear-gradient(135deg, #6b7bff, #5b6cf9); color: #fff;
+    font-size: 14px; font-weight: 600;
+}
+
+/* 关于这一版：真人自述板块 */
+.about {
+    margin-top: 34px;
+    padding: 24px 24px 20px;
+    background: rgba(255, 255, 255, .74);
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-left: 3px solid var(--quark);
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(31, 35, 41, .05);
+}
+.about h2 {
+    font-size: 16px; font-weight: 700; letter-spacing: .5px;
+    margin-bottom: 12px;
+}
+.about p { font-size: 14px; line-height: 1.85; color: #414852; margin-bottom: 10px; }
+.about .sign { margin-top: 14px; font-size: 12.5px; line-height: 1.8; color: var(--muted); }
+
+@media (max-width: 520px) {
+    body { padding: 32px 14px 48px; }
+    header h1 { font-size: 23px; }
+    .card { padding: 18px; border-radius: 14px; }
+    .row { padding: 15px 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>瑞竹堂经验方</h1>
+        <p class="sub">公版影印本</p>
+    </header>
+
+    <div class="cards">
+        <article class="card baidu">
+            <div class="head">
+                <div class="logo">百度</div>
+                <div>
+                    <div class="title">百度网盘</div>
+                    <div class="pw">提取码：<b class="pw-code" data-code="9h5g" title="点击复制">9h5g</b></div>
+                </div>
+            </div>
+            <a class="btn" href="https://pan.baidu.com/s/1YZPtZhO-u5NNdPGA1TIpLA?pwd=9h5g" target="_blank" rel="noopener noreferrer">点击跳转百度网盘</a>
+            <p class="tip">点按钮直接打开，提取码已自动填好，不用手打。</p>
+        </article>
+        <article class="card quark">
+            <div class="head">
+                <div class="logo">夸克</div>
+                <div>
+                    <div class="title">夸克网盘</div>
+                    <div class="pw">提取码：<b class="pw-code" data-code="DU3t" title="点击复制">DU3t</b></div>
+                </div>
+            </div>
+            <a class="btn" href="https://pan.quark.cn/s/dd3b78ca0999?pwd=DU3t" target="_blank" rel="noopener noreferrer">点击跳转夸克网盘</a>
+            <p class="tip">点按钮直接打开，提取码已自动填好，不用手打。</p>
+        </article>
+        <article class="card xunlei">
+            <div class="head">
+                <div class="logo">迅雷</div>
+                <div>
+                    <div class="title">迅雷云盘</div>
+                    <div class="pw">提取码：<b class="pw-code" data-code="bw2m" title="点击复制">bw2m</b></div>
+                </div>
+            </div>
+            <a class="btn" href="https://pan.xunlei.com/s/VP7YR43Xedgu5tby2TWr9rDRA1?pwd=bw2m" target="_blank" rel="noopener noreferrer">点击跳转迅雷云盘</a>
+            <p class="tip">点按钮直接打开，提取码已自动填好，不用手打。</p>
+        </article>
+
+    </div>
+
+    <footer>
+        原文为公有领域，排版由「一書一頁」整理，个人学习用。<br>
+        <a href="../">← 返回目录</a>
+    </footer>
+</div>
+<script src="../copy.js" defer></script>
+</body>
+</html>
